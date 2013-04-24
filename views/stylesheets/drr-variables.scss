@@ -1,0 +1,51 @@
+// Config
+// -------------------------
+$fontPath:              "/font/";
+$imgPath:               "/img/";
+
+// Grays
+// -------------------------
+$black:                 #000;
+$grayDarkest:           #161514;
+$grayDarker:            #3F3A34;
+$grayDark:              #514E49;
+$gray:                  #71695D;
+$grayLight:             #908B85;
+$grayLighter:           #D0CDC8;
+$grayLightest:          #E8E4E2;
+$white:                 #fff;
+
+// Accent colors
+// -------------------------
+$blue:                  #0171A1;
+$blueDark:              #004963;
+$green:                 #989546;
+$red:                   #AF2228;
+$yellow:                #FFB92D;
+$orange:                #D75B25;
+$pink:                  #F356A7;
+$purple:                #953064;
+
+// Scaffolding
+// -------------------------
+$bodyBackground:        $white;
+$textColor:             $grayDarker;
+
+// Typography
+// -------------------------
+$mainFontFamily:        "Lato Regular", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$heavyFontFamily:       "Lato Black", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$lightFontFamily:       "Lato Light", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$baseFontSize:          14px;
+$baseFontFamily:        $mainFontFamily;
+$baseLineHeight:        20px;
+
+// Links
+// -------------------------
+$linkColor:             $blue;
+$linkColorHover:        darken($linkColor, 15%);
+
+// Buttons
+// -------------------------
+$buttonColor:           $grayLightest;
+$buttonBackground:      $linkColor;
