@@ -144,14 +144,14 @@ Include Twitter Bootstrap and DRR CSS files in `<head>`:
 
 All Sass development files are found in `./views/stylesheets`. Primary DRR files are:
 
-- **drr-variables.scss**: Contains DRR colors, fonts, and other branding attributes
+- **drr-variables.scss**: Contains DRR colors, fonts, and other branding definitions
 - **drr-mixins.scss**: Contains DRR components, such as type, links, buttons, forms, etc
-- **drr-standalone.scss**: Includes DRR variables and mixins
+- **drr-standalone.scss**: Includes DRR variables, mixins, boilerplate styles, font declarations
 - **drr-bootstrap.scss**: File for overriding default Twitter Bootstrap styles
 
 # Compiling CSS
 
-To compile and compress css files, NYPL-Bootstrap includes a [makefile](Makefile):
+To compile and compress css files, DRR-Bootstrap includes a [makefile](Makefile):
 
 Run `make` too compile the Sass files into compiled and compressed CSS files. 
 

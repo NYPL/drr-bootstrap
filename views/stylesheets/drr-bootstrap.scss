@@ -1,14 +1,74 @@
 @import "drr-standalone";
 
-body {
-  margin: 0;
-  font-family: $baseFontFamily;
-  font-size: $baseFontSize;
-  line-height: $baseLineHeight;
-  color: $textColor;
-  background-color: $bodyBackground;
-}
-
+// Buttons
+// -------------------------
 .btn {
-  @include drr-button($buttonColor, $buttonBackground);
+  @include drr-button($componentTextColor, $componentBackground, "default", $componentTextColorHighlight, $componentBackgroundHighlight);
+}
+// Large
+.btn-large {
+  padding: $paddingLarge;
+  font-size: $fontSizeLarge;
+}
+.btn-small {
+  padding: $paddingSmall;
+  font-size: $fontSizeSmall;
+}
+.btn-mini {
+  padding: $paddingMini;
+  font-size: $fontSizeMini;
+}
+.btn-primary {
+  color: $componentInverseTextColor;
+  background: $componentPrimaryBackground;
+  &:hover,
+  &:focus {
+    color: $componentInverseTextColorHighlight;
+    background: $componentPrimaryBackgroundHighlight;
+  }
+}
+.btn-warning {
+  color: $componentInverseTextColor;
+  background: $componentWarningBackground;
+  &:hover,
+  &:focus {
+    color: $componentInverseTextColorHighlight;
+    background: $componentWarningBackgroundHighlight;
+  }
+}
+.btn-danger {
+  color: $componentInverseTextColor;
+  background: $componentDangerBackground;
+  &:hover,
+  &:focus {
+    color: $componentInverseTextColorHighlight;
+    background: $componentDangerBackgroundHighlight;
+  }
+}
+.btn-success {
+  color: $componentInverseTextColor;
+  background: $componentSuccessBackground;
+  &:hover,
+  &:focus {
+    color: $componentInverseTextColorHighlight;
+    background: $componentSuccessBackgroundHighlight;
+  }
+}
+.btn-info {
+  color: $componentInverseTextColor;
+  background: $componentInfoBackground;
+  &:hover,
+  &:focus {
+    color: $componentInverseTextColorHighlight;
+    background: $componentInfoBackgroundHighlight;
+  }
+}
+.btn-inverse {
+  color: $componentInverseTextColor;
+  background: $componentInverseBackground;
+  &:hover,
+  &:focus {
+    color: $componentInverseTextColorHighlight;
+    background: $componentInverseBackgroundHighlight;
+  }
 }

@@ -169,7 +169,7 @@
 
 // Buttons
 // -------------------------
-@mixin drr-button($base-color, $base-bg-color, $size: "medium", $highlight-color: "auto", $highlight-bg-color: "auto") {
+@mixin drr-button($base-color, $base-bg-color, $size: "default", $highlight-color: "auto", $highlight-bg-color: "auto") {
   // color
   color: $base-color;
   background: $base-bg-color;
@@ -185,26 +185,28 @@
   border: 0;  
   filter: none;
   *zoom: 1;
+  text-decoration: none;
   @include border-radius(0);
   @include box-shadow(0, 0, 0, 0);
   
-  // Size: mini, small, medium, or large
+  // Size: mini, small, default, or large
   @if $size == "large" {
-    font-size: 2em;
-    padding: 11px 19px;
+    font-size: $fontSizeLarge;
+    padding: $paddingLarge;
   } @else if $size == "small" {
-    font-size: 0.9em;
-    padding: 2px 10px;
+    font-size: $fontSizeSmall;
+    padding: $paddingSmall;
   } @else if $size == "mini" {
-    font-size: 1em;
-    padding: 0 6px;
+    font-size: $fontSizeMini;
+    padding: $paddingMini;
   } @else {
-    font-size: 1.2em;
-    padding: 4px 12px;
+    font-size: $baseFontSize;
+    padding: $basePadding;
   }
   
   &:hover,
   &:focus {
+    text-decoration: none;
     // Highlight Text Color
     @if ( $highlight-color == "auto" ) {
       color: lighten($base-color, 10%);
@@ -219,3 +221,6 @@
     }
   }  
 }
+
+// Titles
+// -------------------------
