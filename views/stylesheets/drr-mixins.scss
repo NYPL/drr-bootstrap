@@ -222,5 +222,39 @@
   }  
 }
 
-// Titles
+// Inverse
 // -------------------------
+@mixin drr-inverse() {
+  background-color: $bodyBackgroundInverse;
+  color: $textColorInverse;
+  a {
+    color: $linkInverseColor;
+    &:hover,
+    &:focus {
+      color: $linkInverseColorHover;
+    }
+  }
+}
+
+// Icon
+// -------------------------
+@mixin drr-icon($content: "none") {
+  @if ( $content != "none") {
+    content: "#{$content}";
+  }  
+  font-family: $iconFontFamily;  
+  display: inline-block;
+  width: auto;
+  height: auto;
+  vertical-align: baseline;
+  background-image: none;
+  background-position: 0% 0%;
+  background-repeat: repeat;
+  margin-top: 0;
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+  text-transform: none;
+  line-height: 1;
+  font-weight: normal;
+  font-variant: normal;
+}

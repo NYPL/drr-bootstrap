@@ -33,7 +33,7 @@ assets/
   stylesheets/    
     drr-variables.scss
     drr-mixins.scss
-    drr-standalone.scss
+    drr-base.scss
 ```
 
 Include Sass files in application css:
@@ -41,7 +41,7 @@ Include Sass files in application css:
 ```
 /*
  *= require_self
- *= require drr-standalone
+ *= require drr-base
  *= require my_styles
  */
 ```
@@ -49,7 +49,7 @@ Include Sass files in application css:
 Or directly from your site's Sass:
 
 ```
-@import "drr-standalone";
+@import "drr-base";
 ```
 
 There are some configurable items on the top of [drr-variables.scss](views/stylesheets/drr-variables.scss) file that you may have to update, e.g. the path to your fonts or images
@@ -79,7 +79,7 @@ assets/
     bootstrap.min.css
     drr-variables.scss
     drr-mixins.scss
-    drr-bootstrap.scss
+    drr-base.scss
 ```
 
 Include Twitter Bootstrap and Sass files in application css:
@@ -146,7 +146,7 @@ All Sass development files are found in `./views/stylesheets`. Primary DRR files
 
 - **drr-variables.scss**: Contains DRR colors, fonts, and other branding definitions
 - **drr-mixins.scss**: Contains DRR components, such as type, links, buttons, forms, etc
-- **drr-standalone.scss**: Includes DRR variables, mixins, boilerplate styles, font declarations
+- **drr-base.scss**: Includes DRR variables, mixins, boilerplate styles, font declarations
 - **drr-bootstrap.scss**: File for overriding default Twitter Bootstrap styles
 
 # Compiling CSS

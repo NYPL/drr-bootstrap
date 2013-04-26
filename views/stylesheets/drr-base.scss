@@ -1,0 +1,317 @@
+@import "drr-variables";
+@import "drr-mixins";
+
+// Body reset
+// -------------------------
+body {
+  margin: 0;
+  font-family: $baseFontFamily;
+  font-size: $baseFontSize;
+  line-height: $baseLineHeight;
+  color: $textColor;
+  background-color: $bodyBackground;
+  letter-spacing: $baseLetterSpacing;
+}
+
+// Links
+// -------------------------
+a {
+  color:$linkColor;
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    color: $linkColorHover;
+    text-decoration: underline;
+  }
+}
+
+
+// Body text
+// -------------------------
+p {
+  margin: 0 0 $baseLineHeight / 2;
+}
+p.lead {
+  font-size: $leadFontSize;
+  line-height: $largeLineHeight;
+  letter-spacing: $largeLetterSpacing;
+}
+small {
+  font-size: $smallFontSize;
+  line-height: $smallLineHeight;
+}
+
+// Headings
+// -------------------------
+
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 {
+  margin: ($baseLineHeight / 2) 0;
+  font-family: $headingsFontFamily;
+  font-weight: $headingsFontWeight;
+  line-height: $baseLineHeight;
+  color: $headingsColor;
+  text-transform: $headingsTransform;
+  letter-spacing: $headingsLetterSpacing;
+}
+h1 { 
+  font-size: $h1FontSize;
+  line-height: $h1FontSize;
+}
+h2 { 
+  font-size: $h2FontSize;
+  line-height: $h2FontSize;
+}
+h3 { 
+  font-size: $h3FontSize;
+  line-height: $h3FontSize;
+}
+h4 { 
+  font-size: $h4FontSize;
+  line-height: $h4FontSize;
+}
+h5 { 
+  font-size: $h5FontSize;
+  line-height: $h5FontSize;
+}
+h6 { 
+  font-size: $h6FontSize;
+  line-height: $h6FontSize;
+}
+.page-header {
+  padding: 0;
+  margin: ($baseLineHeight / 2) 0;
+  border-bottom: $componentBorder;
+}
+
+// Forms
+// -------------------------
+form {
+  margin: 0 0 $baseLineHeight;
+}
+select,
+textarea,
+input[type="text"],
+input[type="password"] {
+  display: inline-block;
+  height: $baseLineHeight;
+  padding: $inputPadding;
+  margin-bottom: $baseLineHeight / 2;
+  font-size: $baseFontSize;
+  line-height: $baseLineHeight;
+  color: $inputColor;
+  vertical-align: middle;
+  width: $inputWidth;
+  background: $inputBackgroundColor;
+  border: $componentBorder;
+  &:focus {
+    border: $componentBorderHighlight;
+    outline: 0;
+    outline: thin dotted \9; /* IE6-9 */
+  }
+}
+[type="submit"] {
+  cursor: pointer;
+  color: $linkColor;
+  &:hover {
+    color: $linkColorHover;
+  }
+}
+.search-input{
+  display: inline-block;
+  margin-bottom: $baseLineHeight / 2;
+  vertical-align: middle;
+  font-size: 0;
+  white-space: nowrap;
+  input[type="text"] {
+    font-size: $baseFontSize;
+    position: relative;
+    margin-bottom: 0;
+    margin-left: 0;
+    vertical-align: top;
+    border-right: 0;
+    &:focus {
+      border: $componentBorder;
+      border-right: 0;
+    }
+  }
+  .add-on,
+  button,
+  [type="submit"] {
+    display: inline-block;
+    width: auto;
+    height: $baseLineHeight + $inputPadding * 2 + $componentBorderWidth * 2;
+    font-size: $baseFontSize;
+    line-height: $baseLineHeight + $inputPadding * 2 + $componentBorderWidth * 2;
+    padding-top: $inputPadding / 2;
+    text-align: center;
+    text-shadow: 0;
+    vertical-align: top;
+    background: $inputBackgroundColor;
+    border: $componentBorder;
+    border-left: 0;
+    margin-left: -2px;
+  }
+  .add-on:before,
+  button:before,
+  [type="submit"]:before {
+    @include drr-icon("o");
+    font-size: $fontSizeLarge;
+  }
+  &:hover {
+    input[type="text"] {
+      border: $componentBorderHighlight;
+      border-right: 0;
+    }
+    .add-on,
+    button,
+    [type="submit"] {
+      border: $componentBorderHighlight;
+      border-left: 0;
+    }
+  }
+}
+
+// Messaging
+// -------------------------
+.alert {
+  padding: $basePadding;
+  font-size: $smallFontSize;
+  margin: 0 0 $baseLineHeight / 2;
+}
+.alert.info {
+  background: $componentInfoBackground;
+}
+.alert.success {
+  background: $componentSuccessBackground;
+}
+.alert.danger {
+  background: $componentDangerBackground;
+}
+
+// Icons
+// -------------------------
+[data-icon]:before,
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: $iconFontFamily;  
+  display: inline-block;
+  width: auto;
+  height: auto;
+  vertical-align: baseline;
+  background-image: none;
+  background-position: 0% 0%;
+  background-repeat: repeat;
+  margin-top: 0;
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+  text-transform: none;
+  line-height: 1;
+  font-weight: normal;
+  font-variant: normal;
+}
+[data-icon]:before {
+  content: attr(data-icon);
+}
+.icon-multiple:before { content: "m";}
+.icon-ascending:before { content: "a";}
+.icon-descending:before { content: "d";}
+.icon-left:before { content: "l";}
+.icon-right:before { content: "r";}
+.icon-play:before { content: "v";}
+.icon-alert:before { content: "c";}
+.icon-favorite:before { content: "f";}
+.icon-share:before { content: "s";}
+.icon-code:before { content: "e";}
+.icon-lock:before { content: "k";}
+.icon-buy:before { content: "1";}
+.icon-print:before { content: "p";}
+.icon-rotate-right:before { content: "9";}
+.icon-rotate-left:before { content: "6";}
+.icon-delete:before { content: "x";}
+.icon-zoom-out:before { content: "-";}
+.icon-zoom-in:before { content: "+";}
+.icon-book:before { content: "b";}
+.icon-triangle-right:before { content: ">";}
+.icon-triangle-down:before { content: "V";}
+.icon-tag:before { content: "!";}
+.icon-video:before { content: '"';}
+.icon-video-play:before { content: "#";}
+.icon-video-pause:before { content: "$";}
+.icon-mute:before { content: "&";}
+.icon-volume:before { content: "%";}
+.icon-save:before { content: "'";}
+.icon-first:before { content: "(";}
+.icon-edit:before { content: ")";}
+.icon-trash:before { content: "/";}
+.icon-cog:before { content: ".";}
+.icon-user:before { content: "0";}
+.icon-eye:before { content: "2";}
+.icon-search:before { content: "o"; }
+
+// Fonts
+// -------------------------
+@font-face {
+  font-family: 'Lato Regular';
+  src: url('#{$fontPath}lato-reg-webfont.eot');
+  src: url('#{$fontPath}lato-reg-webfont.eot?#iefix') format('embedded-opentype'),
+       url('#{$fontPath}lato-reg-webfont.woff') format('woff'),
+       url('#{$fontPath}lato-reg-webfont.ttf') format('truetype'),
+       url('#{$fontPath}lato-reg-webfont.svg#latoregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lato Regular';
+  src: url('#{$fontPath}lato-bol-webfont.eot');
+  src: url('#{$fontPath}lato-bol-webfont.eot?#iefix') format('embedded-opentype'),
+       url('#{$fontPath}lato-bol-webfont.woff') format('woff'),
+       url('#{$fontPath}lato-bol-webfont.ttf') format('truetype'),
+       url('#{$fontPath}lato-bol-webfont.svg#latobold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lato Regular';
+  src: url('#{$fontPath}lato-regita-webfont.eot');
+  src: url('#{$fontPath}lato-regita-webfont.eot?#iefix') format('embedded-opentype'),
+       url('#{$fontPath}lato-regita-webfont.woff') format('woff'),
+       url('#{$fontPath}lato-regita-webfont.ttf') format('truetype'),
+       url('#{$fontPath}lato-regita-webfont.svg#latoitalic') format('svg');
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Lato Black';
+  src: url('#{$fontPath}lato-bla-webfont.eot');
+  src: url('#{$fontPath}lato-bla-webfont.eot?#iefix') format('embedded-opentype'),
+       url('#{$fontPath}lato-bla-webfont.woff') format('woff'),
+       url('#{$fontPath}lato-bla-webfont.ttf') format('truetype'),
+       url('#{$fontPath}lato-bla-webfont.svg#latoblack') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lato Light';
+  src: url('#{$fontPath}lato-lig-webfont.eot');
+  src: url('#{$fontPath}lato-lig-webfont.eot?#iefix') format('embedded-opentype'),
+       url('#{$fontPath}lato-lig-webfont.woff') format('woff'),
+       url('#{$fontPath}lato-lig-webfont.ttf') format('truetype'),
+       url('#{$fontPath}lato-lig-webfont.svg#latolight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: $iconFontFamily;
+  src:font-url('#{$fontPath}icomoon.eot');
+  src:font-url('#{$fontPath}icomoon.eot?#iefix') format('embedded-opentype'),
+    font-url('#{$fontPath}icomoon.svg#icomoon') format('svg'),
+    font-url('#{$fontPath}icomoon.woff') format('woff'),
+    font-url('#{$fontPath}icomoon.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

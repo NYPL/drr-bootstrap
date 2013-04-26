@@ -17,76 +17,124 @@ $white:                 #fff;
 
 // Accent colors
 // -------------------------
-$blue:                  #0171A1;
 $blueDark:              #004963;
-$green:                 #989546;
-$red:                   #AF2228;
+$blue:                  #0171A1;
+$blueLight:             #A2D5E0;
+$yellowDark:            #D75B25;
 $yellow:                #FFB92D;
+$yellowLight:           #FEC172;
+
+// Messaging colors
+// -------------------------
+$green:                 #989546;
+$greenLight:            #E3E5A5;
+$red:                   #AF2228;
 $orange:                #D75B25;
-$pink:                  #F356A7;
+$pink:                  #F1B6BB;
 $purple:                #953064;
 
 // Scaffolding
 // -------------------------
 $bodyBackground:        $white;
 $textColor:             $grayDarker;
+$bodyBackgroundInverse: $grayDarker;
+$textColorInverse:      $grayLightest;
 
 // Typography
 // -------------------------
 $mainFontFamily:        "Lato Regular", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 $heavyFontFamily:       "Lato Black", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 $lightFontFamily:       "Lato Light", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-$baseFontSize:          14px;
+$iconFontFamily:        "Icomoon";
 $baseFontFamily:        $mainFontFamily;
-$baseLineHeight:        20px;
-$basePadding:           4px 12px;
 $headingsFontFamily:    $heavyFontFamily;
 $headingsFontWeight:    bold;
 $headingsColor:         inherit;
 $headingsTransform:     uppercase;
 
-// Component sizing
+// Text sizing
 // -------------------------
-// Based on 14px font-size and 20px line-height
+$baseFontSize:          16px;
+$h1FontSize:            32px;
+$h2FontSize:            28px;
+$h3FontSize:            24px;
+$h4FontSize:            21px;
+$h5FontSize:            18px;
+$h6FontSize:            14px;
+$smallFontSize:         12px;
+$leadFontSize:          $h3FontSize;
 
-$fontSizeLarge:         $baseFontSize * 1.25; // ~18px
-$fontSizeSmall:         $baseFontSize * 0.85; // ~12px
-$fontSizeMini:          $baseFontSize * 0.75; // ~11px
-$paddingLarge:          11px 19px; // 44px
-$paddingSmall:          2px 10px;  // 26px
-$paddingMini:           0 6px;   // 22px
+$baseLineHeight:        24px;
+$smallLineHeight:       20px;
+$largeLineHeight:       32px;
+
+$baseLetterSpacing:     0px;
+$smallLetterSpacing:    -1px;
+$largeLetterSpacing:    1px;
+$headingsLetterSpacing: $largeLetterSpacing;
+
 
 // Links
 // -------------------------
 $linkColor:             $blue;
-$linkColorHover:        darken($linkColor, 15%);
+$linkColorHover:        lighten($linkColor, 10%);
+$linkInverseColor:      $blueLight;
+$linkInverseColorHover: lighten($linkInverseColor, 10%);
+
+// Component sizing
+// -------------------------
+$fontSizeMini:          $smallFontSize;
+$fontSizeSmall:         $h6FontSize;
+$fontSizeLarge:         $h3FontSize;
+$basePadding:           6px;
+$paddingLarge:          20px;
+$paddingSmall:          3px;
+$paddingMini:           2px;
 
 // Component colors
 // -------------------------
-$componentTextColor:                      $textColor;
-$componentTextColorHighlight:             lighten($componentTextColor, 10%);
+$componentTextColor:                              $textColor;
+$componentTextColorHighlight:                     lighten($componentTextColor, 10%);
 
-$componentInverseTextColor:               $grayLightest;
-$componentInverseTextColorHighlight:      lighten($componentInverseTextColor, 10%);
+$componentInverseTextColor:                       $grayLightest;
+$componentInverseTextColorHighlight:              lighten($componentInverseTextColor, 10%);
 
-$componentBackground:                     $grayLightest;
-$componentBackgroundHighlight:            darken($grayLightest, 10%);
+$componentBackground:                             $grayLightest;
+$componentBackgroundHighlight:                    darken($grayLightest, 10%);
 
-$componentPrimaryBackground:              $blue;
-$componentPrimaryBackgroundHighlight:     lighten($componentPrimaryBackground, 10%);
+$componentPrimaryBackground:                      $blue;
+$componentPrimaryBackgroundHighlight:             lighten($componentPrimaryBackground, 10%);
 
-$componentInfoBackground:                 adjust-hue($blue, 10);
-$componentInfoBackgroundHighlight:        lighten($componentInfoBackground, 10%);
+$componentInfoBackground:                         $yellowLight;
+$componentInfoBackgroundHighlight:                lighten($componentInfoBackground, 10%);
 
-$componentSuccessBackground:              $green;
-$componentSuccessBackgroundHighlight:     lighten($componentSuccessBackground, 10%);
+$componentSuccessBackground:                      $greenLight;
+$componentSuccessBackgroundHighlight:             lighten($componentSuccessBackground, 10%);
 
-$componentWarningBackground:              $orange;
-$componentWarningBackgroundHighlight:     lighten($componentWarningBackground, 10%);
+$componentWarningBackground:                      $orange;
+$componentWarningBackgroundHighlight:             lighten($componentWarningBackground, 10%);
 
-$componentDangerBackground:               $red;
-$componentDangerBackgroundHighlight:      lighten($componentDangerBackground, 10%);
+$componentDangerBackground:                       $pink;
+$componentDangerBackgroundHighlight:              lighten($componentDangerBackground, 10%);
 
-$componentInverseBackground:              $grayDarker;
-$componentInverseBackgroundHighlight:     lighten($componentInverseBackground, 10%);
+$componentInverseSuccessBackground:               $green;
+$componentInverseSuccessBackgroundHighlight:      lighten($componentInverseSuccessBackground, 10%);
 
+$componentInverseDangerBackground:                $red;
+$componentInverseDangerBackgroundHighlight:       lighten($componentInverseDangerBackground, 10%);
+
+$componentInverseBackground:                      $grayDarker;
+$componentInverseBackgroundHighlight:             lighten($componentInverseBackground, 10%);
+
+// Component borders
+// -------------------------
+$componentBorderWidth:      1px;
+$componentBorder:           $componentBorderWidth solid $grayLighter;
+$componentBorderHighlight:  $componentBorderWidth solid $grayLight;
+
+// Forms
+// -------------------------
+$inputBackgroundColor:       $bodyBackground;
+$inputColor:                 $textColor;
+$inputWidth:                 300px;
+$inputPadding:               $basePadding;

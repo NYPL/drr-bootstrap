@@ -1,23 +1,121 @@
 <!-- Typography
 ================================================== -->
 <div class="container">
-  <h1>Header 1 <small>Subtext</small></h1>
-  <h2>Header 2 <small>Subtext</small></h2>
-  <h3>Header 3 <small>Subtext</small></h3>
-  <h4>Header 4 <small>Subtext</small></h4>
+  
+  <div class="page-header">
+    <h1>Typography</h1>
+  </div>
+
+  <h1>Header 1</h1>
+  <h2>Header 2</h2>
+  <h3>Header 3</h3>
+  <h4>Header 4</h4>
   <h5>Header 5</h5>
   <h6>Header 6</h6>
+  
+  <p class="lead">Lead text: Duis eu dui nisl, vitae mattis leo. Sed lectus tortor, posuere vitae tincidunt id, vulputate 
+    accumsan nunc. Phasellus in lectus in nisi mattis mattis vitae ac nunc. Maecenas sed lorem risus.
+  </p>
+  <p class="code">
+    <code class="prettyprint">
+      &lt;p class="lead"&gt;Include lead text like this.&lt;/p&gt;
+    </code>
+  </p>
   <p>
     Paragraph text <a href="#">and a link</a>. 
     And maybe something <strong>bold</strong> or <em>italic</em>, 
     or perhaps <small>very small</small>.
-  </p>       
+  </p>
+  <p class="code">
+    <code class="prettyprint">
+      &lt;p&gt;Paragraph text &lt;a href="#"&gt;and a link&lt;/a&gt;. 
+      And maybe something &lt;strong&gt;bold&lt;/strong&gt; or &lt;em&gt;italic&lt;/em&gt;, 
+      or perhaps &lt;small&gt;very small&lt;/small&gt;.&lt;/p&gt;
+    </code>
+  </p>
+  <p>Long text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum congue, ipsum quis posuere vulputate, 
+    massa urna tincidunt odio, nec fringilla mauris est quis mi. Ut dignissim, erat eu vestibulum placerat, justo arcu bibendum magna, 
+    id sollicitudin turpis neque sit amet diam. Curabitur varius magna vitae tellus feugiat ullamcorper lacinia velit hendrerit. 
+    Morbi pharetra suscipit neque, vel condimentum nunc euismod ac. Etiam id orci sit amet metus molestie egestas. 
+    Aenean condimentum semper sem, congue posuere nunc porttitor id. Curabitur commodo vulputate leo quis aliquet. 
+    Cras imperdiet, urna a posuere mollis, elit nisi suscipit orci, sed tincidunt neque odio nec odio. Class aptent 
+    taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas non nisl vel ipsum feugiat interdum.
+     Phasellus erat risus, molestie consectetur porta eget, ullamcorper eu nisi. Aliquam vehicula ornare augue sit amet congue. 
+     Proin ac ullamcorper leo. Nullam sodales sollicitudin ante vitae feugiat.
+  </p>
+  <div class="well">
+    <p>
+      Here is text <a href="#">and a link</a> on an inverted background.
+    </p>
+  </div>
+  <p class="code">
+    <code class="prettyprint lang-css">
+      // Include a Sass mixin like this to make inverted<br />
+      .inverted {
+        @include drr-inverse();
+      }
+    </code>
+  </p>
+</div>
+
+<!-- Colors
+================================================== -->
+<div class="container">
+  <div class="page-header">
+    <h1>Colors</h1>
+  </div>
+  <h3>Grays</h3>
+  <p>For typography and scaffolding</p>
+  <p>
+    <div class="color-block grayDarkest">Darkest #161514</div>
+    <div class="color-block grayDarker">Darker #3F3A34</div>
+    <div class="color-block grayDark">Dark #514E49</div>
+    <div class="color-block gray">Gray #71695D</div>
+    <div class="color-block grayLight">Light #908B85</div>
+    <div class="color-block grayLighter">Lighter #D0CDC8</div>
+    <div class="color-block grayLightest">Lightest #E8E4E2</div>
+  </p>
+  <h3>Colors (Accent)</h3>
+  <p>For links and other actionable items</p>
+  <p>
+    <div class="color-block blueDark">Blue Dark #004963</div>
+    <div class="color-block blue">Blue #0171A1</div>
+    <div class="color-block blueLight">Blue Light #A2D5E0</div>
+    <div class="color-block yellowDark">Yellow Dark #D75B25</div>
+    <div class="color-block yellow">Yellow #FFB92D</div>
+    <div class="color-block yellowLight">Yellow Light #FEC172</div>
+  </p>
+  <h3>Colors (Messaging)</h3>
+  <p>For alerts and other messaging. Use sparingly if at all.</p>
+  <p>
+    <div class="color-block red">Red #AF2228</div>
+    <div class="color-block orange">Orange #D75B25</div>
+    <div class="color-block yellow">Yellow #FFB92D</div>
+    <div class="color-block green">Green #989546</div>
+    <div class="color-block greenLight">Light Green #E3E5A5</div>
+    <div class="color-block blue">Blue #0171A1</div>
+    <div class="color-block purple">Purple #953064</div>
+    <div class="color-block pink">Pink #F1B6BB</div>
+  </p>
+  <p>
+    <strong>Note:</strong> Do not use hex numbers directly if you are using Sass. Include them as variables like this:
+  </p>    
+  <p class="code">
+    <code class="prettyprint lang-css">
+      .darkContainer { 
+        background: $grayDarker;
+        color: $grayLightest;
+      }
+    </code>
+  </p>
 </div>
 
 <!-- Buttons
 ================================================== -->
 <div class="container">
-  <h1>Buttons</h1>
+  <div class="page-header">
+    <h1>Buttons</h1>
+  </div>
   <p>
     <a class="btn">Standard Button</a>
     <a class="btn btn-primary">Primary Button</a>
@@ -32,7 +130,159 @@
     <a class="btn btn-small">Small Button</a>
     <a class="btn">Medium Button</a>
     <a class="btn btn-large">Large Button</a>
-  </p>       
+  </p>    
+  <p class="code">
+    <code class="prettyprint lang-css">
+      // Include a Sass button mixin: mini, small, default, or large<br />
+      .btn {
+        @include drr-button($componentTextColor, $componentBackground, "large");
+      }
+    </code>
+  </p>
+</div>
+
+<!-- Form
+================================================== -->
+<div class="container">
+  <div class="page-header">
+    <h1>Form Elements</h1>
+  </div>
+  <p>
+    <div class="search-input">
+      <input type="text" placeholder="Search Keyword(s)" />
+      <button type="submit"></button>
+    </div>
+  </p> 
+
+</div>
+
+<!-- Messaging
+================================================== -->
+<div class="container">
+  <div class="page-header">
+    <h1>Messaging</h1>
+  </div>
+  <p>
+    <div class="alert info">
+      <strong>Info</strong> Just letting you know...
+    </div>
+    <div class="alert success">
+      <strong>Success!</strong> You just did something awesome.
+    </div>
+    <div class="alert danger">
+      <strong>Danger!</strong> You're about to do something really stupid.
+    </div>
+  </p>
+  <p>
+    Include with class names:
+  </p>
+  <p class="code">
+    <code class="prettyprint">
+      &lt;div class="alert info"&gt;<br />
+        &lt;strong&gt;Info&lt;/strong&gt; Just letting you know...<br />
+      &lt;/div&gt;<br />
+      &lt;div class="alert success"&gt;<br />
+        &lt;strong&gt;Success!&lt;/strong&gt; Congrats, you just did something awesome.<br />
+      &lt;/div&gt;<br />
+      &lt;div class="alert danger"&gt;<br />
+        &lt;strong&gt;Danger!&lt;/strong&gt; You're about to do something really stupid.<br />
+      &lt;/div&gt;
+    </code>
+  </p>
+  <p>
+    Or, directly with Sass variables:
+  </p>
+  <p class="code">
+    <code class="prettyprint lang-css">
+      .alert.info {
+        background: $componentInfoBackground;
+      }<br />
+      .alert.success {
+        background: $componentSuccessBackground;
+      }<br />
+      .alert.danger {
+        background: $componentDangerBackground;
+      }
+    </code>
+  </p>
+  
+  
+</div>
+
+<!-- Icons
+================================================== -->
+<div id="icons" class="container">
+  <div class="page-header">
+    <h1>Icons</h1>
+  </div>
+  <p>
+    We use a custom icon font from <a href="http://icomoon.io/app" target="_blank">Icomoon</a>. We will add and customize as necessary.
+    Here are the icons we currently support:
+  </p>
+  <p>
+    <div class="icon-multiple"> multiple</div>
+    <div class="icon-ascending"> ascending</div>
+    <div class="icon-descending"> descending</div>
+    <div class="icon-left"> left</div>
+    <div class="icon-right"> right</div>
+    <div class="icon-play"> play</div>
+    <div class="icon-alert"> alert</div>
+    <div class="icon-favorite"> favorite</div>
+    <div class="icon-share"> share</div>
+    <div class="icon-code"> code</div>
+    <div class="icon-lock"> lock</div>
+    <div class="icon-buy"> buy</div>
+    <div class="icon-print"> print</div>
+    <div class="icon-rotate-right"> rotate right</div>
+    <div class="icon-rotate-left"> rotate left</div>
+    <div class="icon-delete"> delete</div>
+    <div class="icon-zoom-out"> zoom out</div>
+    <div class="icon-zoom-in"> zoom in</div>
+    <div class="icon-book"> book</div>
+    <div class="icon-triangle-right"> triangle right</div>
+    <div class="icon-triangle-down"> triangle down</div>
+    <div class="icon-tag"> tag</div>
+    <div class="icon-video"> video</div>
+    <div class="icon-video-play"> video play</div>
+    <div class="icon-video-pause"> video pause</div>
+    <div class="icon-mute"> mute</div>
+    <div class="icon-volume"> volume</div>
+    <div class="icon-save"> save</div>
+    <div class="icon-first"> first</div>
+    <div class="icon-edit"> edit</div>
+    <div class="icon-trash"> trash</div>
+    <div class="icon-cog"> cog</div>
+    <div class="icon-user"> user</div>
+    <div class="icon-eye"> eye</div>
+    <div class="icon-search"> search</div>
+  </p>
+  <p>
+    There are a few ways you can add icons. First, as a class:
+  </p>
+  <p class="code">
+    <code class="prettyprint">
+      &lt;div class="icon-zoom-out"&gt; zoom out&lt;/div&gt;<br />
+      &lt;div class="icon-zoom-in"&gt; zoom in&lt;/div&gt;
+    </code>
+  </p>
+  <p>
+    Second, as a data-icon attribute
+  </p>
+  <p class="code">
+    <code class="prettyprint">
+      &lt;div data-icon="-"&gt; zoom out&lt;/div&gt;<br />
+      &lt;div data-icon="+"&gt; zoom in&lt;/div&gt;
+    </code>
+  </p>
+  <p>
+    Third, directly in the CSS
+  </p>
+  <p class="code">
+    <code class="prettyprint">
+      .icon-zoom-out:before { content: "-"; }<br />
+      .icon-zoom-in:before { content: "+"; }
+    </code>
+  </p>
 </div>
 
 
