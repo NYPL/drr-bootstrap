@@ -107,12 +107,13 @@
   filter:            FlipH;
   -ms-filter:        "FlipH";
 }
-@mixin font-face($fontFamily: myFont, $eotFileSrc: 'myFont.eot', $woffFileSrc: 'myFont.woff', $ttfFileSrc: 'myFont.ttf', $svgFileSrc: 'myFont.svg') {
+@mixin font-face($fontFamily, $path, $fontFilename) {
   font-family: $fontFamily;
-  src: url($eotFileSrc)  format('eot'),
-       url($woffFileSrc) format('woff'),
-       url($ttfFileSrc)  format('truetype'),
-       url($svgFileSrc)  format('svg');
+  src: url('#{$path}#{$fontFilename}.eot');
+  src: url('#{$path}#{$fontFilename}.eot?#iefix') format('embedded-opentype'),
+       url('#{$path}#{$fontFilename}.woff') format('woff'),
+       url('#{$path}#{$fontFilename}.ttf') format('truetype'),
+       url('#{$path}#{$fontFilename}.svg') format('svg');
 }
 @mixin opacity($opacity: 0.5) {
   filter:         alpha(opacity=($opacity * 100));
@@ -257,4 +258,61 @@
   line-height: 1;
   font-weight: normal;
   font-variant: normal;
+}
+
+// Search Box
+// -------------------------
+@mixin drr-search-box($size: "default") {
+  display: inline-block;
+  margin-bottom: $baseLineHeight / 2;
+  vertical-align: middle;
+  font-size: 0;
+  white-space: nowrap;
+  input[type="text"] {
+    font-size: $baseFontSize;
+    position: relative;
+    margin-bottom: 0;
+    margin-left: 0;
+    vertical-align: top;
+    border-right: 0;
+    &:focus {
+      border: $componentBorder;
+      border-right: 0;
+    }
+  }
+  .add-on,
+  button,
+  [type="submit"] {
+    display: inline-block;
+    width: auto;
+    height: $baseLineHeight + $inputPadding * 2 + $componentBorderWidth * 2;
+    font-size: $baseFontSize;
+    line-height: $baseLineHeight + $inputPadding * 2 + $componentBorderWidth * 2;
+    padding-top: $inputPadding / 2;
+    text-align: center;
+    text-shadow: 0;
+    vertical-align: top;
+    background: $inputBackgroundColor;
+    border: $componentBorder;
+    border-left: 0;
+    margin-left: -2px;
+  }
+  .add-on:before,
+  button:before,
+  [type="submit"]:before {
+    @include drr-icon("o");
+    font-size: $fontSizeLarge;
+  }
+  &:hover {
+    input[type="text"] {
+      border: $componentBorderHighlight;
+      border-right: 0;
+    }
+    .add-on,
+    button,
+    [type="submit"] {
+      border: $componentBorderHighlight;
+      border-left: 0;
+    }
+  }
 }

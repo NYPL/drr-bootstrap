@@ -147,13 +147,34 @@
   <div class="page-header">
     <h1>Form Elements</h1>
   </div>
+  <h2>Search Boxes</h2>
   <p>
     <div class="search-input">
       <input type="text" placeholder="Search Keyword(s)" />
       <button type="submit"></button>
     </div>
   </p> 
-
+  <p>
+    Search box requires a wrapper like so:
+  </p>
+  <p class="code">
+    <code class="prettyprint">
+      &lt;div class="search-input"&gt;<br />
+        &lt;input type="text" placeholder="Search Keyword(s)" /&gt;<br />
+        &lt;button type="submit"&gt;&lt;/button&gt;<br />
+      &lt;/div&gt;
+    </code>
+  </p>
+  <p>
+    The wrapper is given the class <strong>"search-input"</strong>, or you can include it in your own class with a mixin like:
+  </p>
+  <p class="code">
+    <code class="prettyprint">
+      .my-large-search-box{
+        @include drr-search-box('large');
+      }
+    </code>
+  </p>
 </div>
 
 <!-- Messaging
@@ -275,12 +296,12 @@
     </code>
   </p>
   <p>
-    Third, directly in the CSS
+    Third, directly with a mixin
   </p>
   <p class="code">
     <code class="prettyprint">
-      .icon-zoom-out:before { content: "-"; }<br />
-      .icon-zoom-in:before { content: "+"; }
+      .custom-zoom-out:before { @include drr-icon("-"); }<br />
+      .custom-zoom-in:before { @include drr-icon("+"); }
     </code>
   </p>
 </div>
