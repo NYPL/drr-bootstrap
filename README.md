@@ -128,6 +128,10 @@ Include Twitter Bootstrap and DRR CSS files in `<head>`:
 <link rel="stylesheet" href="/path/to/drr-bootstrap.min.css" type="text/css" />
 ```
 
+# Example
+
+You can view a full example at [drrstyleguide.herokuapp.com](https://drrstyleguide.herokuapp.com) and an example using Twitter Bootstrap [here]([drrstyleguide.herokuapp.com](https://drrstyleguide.herokuapp.com/bootstrap)
+
 # Development
 
 ## Quick start
