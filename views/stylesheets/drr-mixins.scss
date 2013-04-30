@@ -1,3 +1,10 @@
+/*
+ * DRR-Bootstrap
+ * Source: https://github.com/NYPL/drr-bootstrap
+ * Author: NYPL Labs
+ * Description: Base front-end framework for NYPL Digital Reading Room (DRR) Sites to extend.
+ */
+
 // CSS3 Mixins
 // Source: https://github.com/matthieua/sass-css3-mixins
 // -------------------------
@@ -168,9 +175,41 @@
   box-shadow:         0 0 0 1px $colorTwo, 0 0 0 2px $colorThree;
 }
 
+// Headings
+// -------------------------
+@mixin drr-heading($tag: "inherit") {
+  margin: ($baseLineHeight / 2) 0;
+  font-family: $headingsFontFamily;
+  font-weight: $headingsFontWeight;
+  line-height: $baseLineHeight;
+  color: $headingsColor;
+  text-transform: $headingsTransform;
+  letter-spacing: $headingsLetterSpacing;
+  @if $tag == "h1" {
+    font-size: $h1FontSize;
+    line-height: $h1FontSize;
+  } @else if $tag == "h2" {
+    font-size: $h2FontSize;
+    line-height: $h2FontSize;
+  } @else if $tag == "h3" {
+    font-size: $h3FontSize;
+    line-height: $h3FontSize;
+  } @else if $tag == "h4" {
+    font-size: $h4FontSize;
+    line-height: $h4FontSize;
+  } @else if $tag == "h5" {
+    font-size: $h5FontSize;
+    line-height: $h5FontSize;
+  } @else if $tag == "h6" {
+    font-size: $h6FontSize;
+    line-height: $h6FontSize;
+  }
+}
+
 // Buttons
 // -------------------------
-@mixin drr-button($base-color, $base-bg-color, $size: "default", $highlight-color: "auto", $highlight-bg-color: "auto") {
+@mixin drr-button($base-color: "default", $base-bg-color: "default", $size: "default", $highlight-color: "auto", $highlight-bg-color: "auto") {
+  
   // color
   color: $base-color;
   background: $base-bg-color;
@@ -193,16 +232,16 @@
   // Size: mini, small, default, or large
   @if $size == "large" {
     font-size: $fontSizeLarge;
-    padding: $paddingLarge;
+    padding: $basePadding $paddingLarge;
   } @else if $size == "small" {
     font-size: $fontSizeSmall;
-    padding: $paddingSmall;
+    padding: $paddingMini $paddingSmall;
   } @else if $size == "mini" {
     font-size: $fontSizeMini;
     padding: $paddingMini;
   } @else {
     font-size: $baseFontSize;
-    padding: $basePadding;
+    padding: $paddingSmall $basePadding;
   }
   
   &:hover,
@@ -225,8 +264,8 @@
 
 // Inverse
 // -------------------------
-@mixin drr-inverse() {
-  background-color: $bodyBackgroundInverse;
+@mixin drr-inverse($alpha: 1) {  
+  background-color: rgba($bodyBackgroundInverse, $alpha);
   color: $textColorInverse;
   a {
     color: $linkInverseColor;
@@ -248,9 +287,7 @@
   width: auto;
   height: auto;
   vertical-align: baseline;
-  background-image: none;
-  background-position: 0% 0%;
-  background-repeat: repeat;
+  background: none;
   margin-top: 0;
   speak: none;
   -webkit-font-smoothing: antialiased;
@@ -262,13 +299,16 @@
 
 // Search Box
 // -------------------------
-@mixin drr-search-box($size: "default") {
+@mixin drr-search-box($width: "default") {
   display: inline-block;
   margin-bottom: $baseLineHeight / 2;
   vertical-align: middle;
   font-size: 0;
   white-space: nowrap;
   input[type="text"] {
+    @if $width != "default" {
+      width: $width; 
+    }    
     font-size: $baseFontSize;
     position: relative;
     margin-bottom: 0;
@@ -283,6 +323,11 @@
   .add-on,
   button,
   [type="submit"] {
+    color: $linkColor;
+    &:hover {
+      color: $linkColorHover;
+    }
+    cursor: pointer;
     display: inline-block;
     width: auto;
     height: $baseLineHeight + $inputPadding * 2 + $componentBorderWidth * 2;
@@ -314,5 +359,24 @@
       border: $componentBorderHighlight;
       border-left: 0;
     }
+  }
+}
+
+// Alert
+// -------------------------
+@mixin drr-alert($type: "info") {
+  color: $textColor; 
+  padding: $basePadding;
+  font-size: $smallFontSize;
+  margin: 0 0 $baseLineHeight / 2;
+  text-shadow: none;
+  border: 0;
+  @include border-radius(0);   
+  @if $type == "danger" {
+    background: $componentDangerBackground;
+  } @else if $type == "success" {
+    background: $componentSuccessBackground;
+  } @else {
+    background: $componentInfoBackground;
   }
 }

@@ -1,4 +1,4 @@
-@import "drr-base";
+@import "docs";
 
 @mixin clearfix {
   *zoom: 1;
@@ -13,156 +13,14 @@
   }
 }
 
-// Buttons
-// -------------------------
-.btn {
-  @include drr-button($componentTextColor, $componentBackground, "default", $componentTextColorHighlight, $componentBackgroundHighlight);
-}
-// Large
-.btn-large {
-  padding: $paddingLarge;
-  font-size: $fontSizeLarge;
-}
-.btn-small {
-  padding: $paddingSmall;
-  font-size: $fontSizeSmall;
-}
-.btn-mini {
-  padding: $paddingMini;
-  font-size: $fontSizeMini;
-}
-.btn-primary {
-  color: $componentInverseTextColor;
-  background: $componentPrimaryBackground;
-  &:hover,
-  &:focus {
-    color: $componentInverseTextColorHighlight;
-    background: $componentPrimaryBackgroundHighlight;
-  }
-}
-.btn-warning {
-  color: $componentInverseTextColor;
-  background: $componentWarningBackground;
-  &:hover,
-  &:focus {
-    color: $componentInverseTextColorHighlight;
-    background: $componentWarningBackgroundHighlight;
-  }
-}
-.btn-danger {
-  color: $componentInverseTextColor;
-  background: $componentInverseDangerBackground;
-  &:hover,
-  &:focus {
-    color: $componentInverseTextColorHighlight;
-    background: $componentInverseDangerBackgroundHighlight;
-  }
-}
-.btn-success {
-  color: $componentInverseTextColor;
-  background: $componentInverseSuccessBackground;
-  &:hover,
-  &:focus {
-    color: $componentInverseTextColorHighlight;
-    background: $componentInverseSuccessBackgroundHighlight;
-  }
-}
-.btn-info {
-  color: $componentTextColor;
-  background: $componentInfoBackground;
-  &:hover,
-  &:focus {
-    color: $componentTextColorHighlight;
-    background: $componentInfoBackgroundHighlight;
-  }
-}
-.btn-inverse {
-  color: $componentInverseTextColor;
-  background: $componentInverseBackground;
-  &:hover,
-  &:focus {
-    color: $componentInverseTextColorHighlight;
-    background: $componentInverseBackgroundHighlight;
-  }
-}
-
-// Wells
-// --------------------------------------------------
-.well {
-  padding: $paddingLarge;
-  margin-bottom: 20px;
-  border: 0;
-  @include drr-inverse();
-  @include border-radius(0);
-  @include box-shadow(0, 0, 0);
-  blockquote {
-    border: 0;
-  }
-  *:last-child {
-    padding-bottom: 0;
-    margin-bottom: 0;
-  }
-}
-
-// Colors
-// --------------------------------------------------
-.color-block {
-  padding: ($smallLineHeight/4);
-  margin-right: ($smallLineHeight/4);
-  margin-bottom: $smallLineHeight;
-  display: inline-block;
-  font-size: $smallFontSize;
-}
-.grayDarkest { background: $grayDarkest; }
-.grayDarker { background: $grayDarker; }
-.grayDark { background: $grayDark; }
-.gray { background: $gray; }
-.grayLight { background: $grayLight; }
-.grayLighter { background: $grayLighter; }
-.grayLightest { background: $grayLightest; }
-.blueDark { background: $blueDark; }
-.blueLight { background: $blueLight; }
-.yellowDark { background: $yellowDark; }
-.yellowLight { background: $yellowLight; }
-.red { background: $red; }
-.orange { background: $orange; }
-.yellow { background: $yellow; }
-.green { background: $green; }
-.greenLight { background: $greenLight; }
-.blue { background: $blue; }
-.purple { background: $purple; }
-.pink { background: $pink; }
-.grayDarkest,
-.grayDarker,
-.grayDark,
-.gray,
-.grayLight,
-.blueDark,
-.yellowDark,
-.red,
-.orange,
-.green,
-.blue,
-.purple {
-  color: $textColorInverse;
-}
-
-// Icons
-// -------------------------
-#icons [class^="icon-"],
-#icons [class*=" icon-"] {
-  width: 200px;
-  display: inline-block;
-}
-
 // App
 // -------------------------
 .container {
   width: 960px;
-  margin: 20px auto;
+  margin: $paddingLarge auto;
+  @media screen and (min-width: 0px) and (max-width: 960px) {
+    width: auto;
+    margin: 0 $paddingLarge;
+  }
 }
-.code {
-  padding: $paddingLarge;
-  border: $componentBorder;
-  background: $grayLightest;
-}
+

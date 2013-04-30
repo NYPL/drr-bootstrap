@@ -1,7 +1,14 @@
+/*
+ * DRR-Bootstrap
+ * Source: https://github.com/NYPL/drr-bootstrap
+ * Author: NYPL Labs
+ * Description: Base front-end framework for NYPL Digital Reading Room (DRR) Sites to extend.
+ */
+
 // Config
 // -------------------------
 $fontPath:              "/font/";
-$imgPath:               "/img/";
+$imgPath:               "/image/";
 
 // Grays
 // -------------------------
@@ -37,18 +44,17 @@ $purple:                #953064;
 // -------------------------
 $bodyBackground:        $white;
 $textColor:             $grayDarker;
-$bodyBackgroundInverse: $grayDarker;
+$bodyBackgroundInverse: $grayDarkest;
 $textColorInverse:      $grayLightest;
 
 // Typography
 // -------------------------
 $mainFontFamily:        "Lato Regular", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 $heavyFontFamily:       "Lato Black", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-$lightFontFamily:       "Lato Light", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 $iconFontFamily:        "Icomoon";
 $baseFontFamily:        $mainFontFamily;
 $headingsFontFamily:    $heavyFontFamily;
-$headingsFontWeight:    bold;
+$headingsFontWeight:    normal;
 $headingsColor:         inherit;
 $headingsTransform:     uppercase;
 
@@ -86,10 +92,10 @@ $linkInverseColorHover: lighten($linkInverseColor, 10%);
 $fontSizeMini:          $smallFontSize;
 $fontSizeSmall:         $h6FontSize;
 $fontSizeLarge:         $h3FontSize;
-$basePadding:           6px;
+$basePadding:           12px;
 $paddingLarge:          20px;
-$paddingSmall:          3px;
-$paddingMini:           2px;
+$paddingSmall:          6px;
+$paddingMini:           3px;
 
 // Component colors
 // -------------------------
@@ -131,10 +137,11 @@ $componentInverseBackgroundHighlight:             lighten($componentInverseBackg
 $componentBorderWidth:      1px;
 $componentBorder:           $componentBorderWidth solid $grayLighter;
 $componentBorderHighlight:  $componentBorderWidth solid $grayLight;
+$componentBorderLarge:      4px solid $gray;
 
 // Forms
 // -------------------------
 $inputBackgroundColor:       $bodyBackground;
 $inputColor:                 $textColor;
 $inputWidth:                 300px;
-$inputPadding:               $basePadding;
+$inputPadding:               $paddingSmall;

@@ -1,3 +1,25 @@
+<!-- Introduction
+================================================== -->
+<div class="container">
+  
+  <div class="page-header">
+    <h1>Introduction</h1>
+  </div>
+  
+  <p class="lead">
+    This is a Digital Reading Room (DRR) Style-Guide-In-Progress.
+  </p>
+  
+  <p>
+    This guide demonstrates how you can implement the DRR Base Styles and <a href="https://github.com/NYPL/drr-bootstrap">DRR Base Files</a>
+    Into your DRR or Labs microsite. The base files include common DRR variables, components, and base styling.
+    It can be implemented using Sass or CSS, with or without <a href="http://twitter.github.io/bootstrap/">Twitter Bootstrap</a>
+    (see a Bootstrap example here: <a href="/bootstrap">here</a>).
+    You can learn more on how to develop and implement the base files <a href="https://github.com/NYPL/drr-bootstrap/blob/master/README.md">here</a>.
+  </p>
+  
+</div>
+
 <!-- Typography
 ================================================== -->
 <div class="container">
@@ -13,6 +35,14 @@
   <h5>Header 5</h5>
   <h6>Header 6</h6>
   
+  <p>If you want to apply Heading styles to non-heading tags, you can use a mixin like: </p>
+  <p class="code">
+    <code class="prettyprint">
+      // apply "h3" style to element<br />
+      .my-custom-heading { @include drr-heading('h3'); }
+    </code>
+  </p>
+  
   <p class="lead">Lead text: Duis eu dui nisl, vitae mattis leo. Sed lectus tortor, posuere vitae tincidunt id, vulputate 
     accumsan nunc. Phasellus in lectus in nisi mattis mattis vitae ac nunc. Maecenas sed lorem risus.
   </p>
@@ -21,6 +51,13 @@
       &lt;p class="lead"&gt;Include lead text like this.&lt;/p&gt;
     </code>
   </p>
+  <p>Or you can use variables directly in your Sass:</p>
+  <p class="code">
+    <code class="prettyprint">
+      .my-lead-text { font-size: $leadFontSize; }
+    </code>
+  </p>
+  
   <p>
     Paragraph text <a href="#">and a link</a>. 
     And maybe something <strong>bold</strong> or <em>italic</em>, 
@@ -53,6 +90,19 @@
       // Include a Sass mixin like this to make inverted<br />
       .inverted {
         @include drr-inverse();
+      }
+    </code>
+  </p>
+  <div class="well transparent">
+    <p>
+      You can also do an inverted background with opacity.
+    </p>
+  </div>
+  <p class="code">
+    <code class="prettyprint lang-css">
+      // Enter a value between 0 and 1 for alpha transparency<br />
+      .inverted {
+        @include drr-inverse(0.8);
       }
     </code>
   </p>
@@ -135,7 +185,7 @@
     <code class="prettyprint lang-css">
       // Include a Sass button mixin: mini, small, default, or large<br />
       .btn {
-        @include drr-button($componentTextColor, $componentBackground, "large");
+        @include drr-button($textColor, $backgroundColor, $size);
       }
     </code>
   </p>
@@ -147,22 +197,55 @@
   <div class="page-header">
     <h1>Form Elements</h1>
   </div>
+  <form>
+    <fieldset>
+      <legend>Sample Form Legend</legend>
+      <label>Label One</label>
+      <input type="text" placeholder="Type something...">
+      <span class="help-block">Example block-level help text here.</span>
+      <label>Label Two</label>
+      <textarea rows="3"></textarea>
+      <label class="checkbox">
+        <input type="checkbox"> Check me out
+      </label>
+      <button type="submit">Submit</button>
+    </fieldset>
+  </form>  
+  <p class="code">
+    <code class="prettyprint">
+      &lt;form&gt;<br />
+        &lt;fieldset&gt;<br />
+          &lt;legend&gt;Sample Form Legend&lt;/legend&gt;<br />
+          &lt;label&gt;Label One&lt;/label&gt;<br />
+          &lt;input type="text" placeholder="Type something..."&gt;<br />
+          &lt;span class="help-block"&gt;Example block-level help text here.&lt;/span&gt;<br />
+          &lt;label&gt;Label Two&lt;/label&gt;<br />
+          &lt;textarea rows="3"&gt;&lt;/textarea&gt;<br />
+          &lt;label class="checkbox"&gt;<br />
+            &lt;input type="checkbox"&gt; Check me out<br />
+          &lt;/label&gt;<br />
+          &lt;button type="submit"&gt;Submit&lt;/button&gt;<br />
+        &lt;/fieldset&gt;<br />
+      &lt;/form&gt;
+    </code>
+  </p>
+  
   <h2>Search Boxes</h2>
   <p>
-    <div class="search-input">
+    <form class="search-input">
       <input type="text" placeholder="Search Keyword(s)" />
       <button type="submit"></button>
-    </div>
+    </form>
   </p> 
   <p>
-    Search box requires a wrapper like so:
+    Search box can be displayed like so:
   </p>
   <p class="code">
     <code class="prettyprint">
-      &lt;div class="search-input"&gt;<br />
+      &lt;form class="search-input"&gt;<br />
         &lt;input type="text" placeholder="Search Keyword(s)" /&gt;<br />
         &lt;button type="submit"&gt;&lt;/button&gt;<br />
-      &lt;/div&gt;
+      &lt;/form&gt;
     </code>
   </p>
   <p>
@@ -170,8 +253,8 @@
   </p>
   <p class="code">
     <code class="prettyprint">
-      .my-large-search-box{
-        @include drr-search-box('large');
+      .my-custom-search-box{
+        @include drr-search-box($custom_width);
       }
     </code>
   </p>
@@ -207,22 +290,22 @@
       &lt;/div&gt;<br />
       &lt;div class="alert danger"&gt;<br />
         &lt;strong&gt;Danger!&lt;/strong&gt; You're about to do something really stupid.<br />
-      &lt;/div&gt;
+      &lt;/div&gt;      
     </code>
   </p>
   <p>
-    Or, directly with Sass variables:
+    Or, with Sass mixins:
   </p>
   <p class="code">
     <code class="prettyprint lang-css">
-      .alert.info {
-        background: $componentInfoBackground;
+      .alert-info {
+        @include drr-alert('info');
       }<br />
-      .alert.success {
-        background: $componentSuccessBackground;
+      .alert-success {
+        @include drr-alert('success');
       }<br />
-      .alert.danger {
-        background: $componentDangerBackground;
+      .alert-danger {
+        @include drr-alert('danger');
       }
     </code>
   </p>
@@ -276,6 +359,7 @@
     <div class="icon-user"> user</div>
     <div class="icon-eye"> eye</div>
     <div class="icon-search"> search</div>
+    <div class="icon-nypl"> NYPL</div>
   </p>
   <p>
     There are a few ways you can add icons. First, as a class:

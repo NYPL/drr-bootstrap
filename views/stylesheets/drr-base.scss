@@ -1,3 +1,10 @@
+/*
+ * DRR-Bootstrap
+ * Source: https://github.com/NYPL/drr-bootstrap
+ * Author: NYPL Labs
+ * Description: Base front-end framework for NYPL Digital Reading Room (DRR) Sites to extend.
+ */
+
 @import "drr-variables";
 @import "drr-mixins";
 
@@ -50,13 +57,7 @@ h3,
 h4, 
 h5, 
 h6 {
-  margin: ($baseLineHeight / 2) 0;
-  font-family: $headingsFontFamily;
-  font-weight: $headingsFontWeight;
-  line-height: $baseLineHeight;
-  color: $headingsColor;
-  text-transform: $headingsTransform;
-  letter-spacing: $headingsLetterSpacing;
+  @include drr-heading();
 }
 h1 { 
   font-size: $h1FontSize;
@@ -91,7 +92,29 @@ h6 {
 // Forms
 // -------------------------
 form {
-  margin: 0 0 $baseLineHeight;
+  margin: 0 0 $basePadding;
+}
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+legend {  
+  @include drr-heading('h4');
+  display: block;
+  width: 100%;  
+  margin: 0;
+  padding: 0;
+  border: 0;
+  margin-bottom: $basePadding;
+  padding-bottom: $paddingSmall;  
+  border-bottom: $componentBorder;
+  color: $gray;
+}
+label {
+  @include drr-heading('h6');
+  display: block;
+  margin-bottom: $paddingSmall;
 }
 select,
 textarea,
@@ -114,23 +137,26 @@ input[type="password"] {
     outline: thin dotted \9; /* IE6-9 */
   }
 }
+textarea {
+  height: auto;
+}
 [type="submit"] {
-  cursor: pointer;
-  color: $linkColor;
-  &:hover {
-    color: $linkColorHover;
-  }
+  @include drr-button($componentInverseTextColor, $componentPrimaryBackground);
+  cursor: pointer;  
 }
 .search-input{
   @include drr-search-box();
+}
+.help-block {
+  display: block;
+  margin-bottom: $baseLineHeight / 2;
+  font-size: $smallFontSize;
 }
 
 // Messaging
 // -------------------------
 .alert {
-  padding: $basePadding;
-  font-size: $smallFontSize;
-  margin: 0 0 $baseLineHeight / 2;
+  @include drr-alert();
 }
 .alert.info {
   background: $componentInfoBackground;
@@ -187,6 +213,7 @@ input[type="password"] {
 .icon-user:before { content: "0";}
 .icon-eye:before { content: "2";}
 .icon-search:before { content: "o"; }
+.icon-nypl:before { content: "N"; }
 
 // Fonts
 // -------------------------
