@@ -85,6 +85,10 @@ $headerbreakpoint: 920px;
     margin: 0;
     padding: 0;
   }
+  li {
+    margin: 0;
+    padding: 0;
+  }
 
   @media print {
     display: none;
@@ -344,7 +348,7 @@ $headerbreakpoint: 920px;
             h5 {
               color: $headeritemgrouptitlecolor;
               padding: 5px 15px;
-              font-size: 1em;
+              font-size: 0.9em;
               line-height: 1em;
               letter-spacing: 1px;
               margin: 12px 0;
