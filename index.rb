@@ -20,6 +20,10 @@ get '/bootstrap' do
   erb :index, :locals => {:bootstrap => true}
 end
 
+get '/header' do
+  erb :nypl_header, :layout => false
+end
+
 # interpret anything in views/scss file as scss
 get '/stylesheets/:name.css' do
   scss :"stylesheets/#{params[:name]}"
