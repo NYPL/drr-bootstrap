@@ -149,6 +149,8 @@ $headerbreakpoint: 920px;
         width: $headersearchwidth - 22;
         margin-bottom: 5px;
         font-size: 14px;
+        height: 24px;
+        padding: 6px;
 
         @media screen and (min-width: 0px) and (max-width: $headerbreakpoint) {
           width: 100%;
